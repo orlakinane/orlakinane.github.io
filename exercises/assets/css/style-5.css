@@ -317,7 +317,8 @@ p {
     margin-bottom: 20px;
 }
 
-.highlight-text {background-color: var(--green-700);
+.highlight-text {
+    background-color: var(--green-700);
     color:  white;
 padding: 3px 12px 6px 12px;
 width: fit-content;}
