@@ -31,4 +31,4 @@ header h1, header h2 { letter-spacing: -1px }
 }
 
 .cols-2-half .col-2 h2,
-.cols-2-half .col-2 p { letter-spacing: 1px }
+.cols-2-half .col-2 p { letter-spacing: -1px }
