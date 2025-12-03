@@ -1,0 +1,9 @@
+/* Add your custom CSS here */
+.section-selector-1 { background-color: var(--lime-400) }
+
+.section-selector-1 .col-2 h2 {
+    font-family: 'Saira Condensed', sans-serif;
+    letter-spacing: 1px;
+    font-size: calc(var(--font-size-xl) * 1.2);
+}
+
