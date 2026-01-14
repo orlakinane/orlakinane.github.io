@@ -1,0 +1,165 @@
+/* =========================================================
+   BASE RESETS — simplified and restructured
+========================================================= */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+    font-size: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.6;
+    background: #F9FAFB;
+    color: #1F2933;
+}
+
+/* Optimize fonts depending on screen */
+@media (max-width: 768px) {
+    body { text-rendering: optimizeSpeed; }
+}
+
+@media (min-width: 769px) {
+    body { text-rendering: optimizeLegibility; }
+}
+
+
+/* =========================================================
+   CUSTOM PROPERTIES — rewritten values & scale
+========================================================= */
+:root {
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --serif: "Georgia", "Times New Roman", Times, serif;
+    --mono: "Cascadia Mono", Consolas, Menlo, monospace;
+
+    /* Fluid type scale */
+    --fs-xs: clamp(0.75rem, 0.25vw + 0.65rem, 0.9rem);
+    --fs-sm: clamp(0.9rem, 0.3vw + 0.8rem, 1rem);
+    --fs-base: clamp(1rem, 0.45vw + 0.85rem, 1.25rem);
+    --fs-md: clamp(1.25rem, 0.7vw + 1rem, 1.6rem);
+    --fs-lg: clamp(1.6rem, 1vw + 1.2rem, 2.2rem);
+    --fs-xl: clamp(2.1rem, 1.7vw + 1.4rem, 3rem);
+    --fs-xxl: clamp(2.7rem, 2.5vw + 1.7rem, 4.2rem);
+
+    /* Accessible colour palette */
+    --primary-dark: #0F4C81;
+    --primary-mid:  #0066CC;
+    --text-main:    #1F2933;
+    --text-muted:   #374151;
+    --bg-page:      #F9FAFB;
+    --bg-section:   #FFFFFF;
+}
+
+
+/* =========================================================
+   LAYOUT ELEMENTS
+========================================================= */
+
+/* Shared section structure */
+header,
+section,
+footer {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* Remove bottom margin on last item within section */
+section > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Desktop padding */
+@media (min-width: 769px) {
+    header {
+        padding: 4% 18% 1%;
+    }
+
+    section {
+        padding: 4% 18%;
+    }
+}
+
+/* Mobile padding */
+@media (max-width: 768px) {
+    header {
+        padding: 7% 6% 3%;
+    }
+
+    section {
+        padding: 7% 6%;
+    }
+}
+
+/* Max widths */
+section { max-width: 1800px; }
+section > * {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1 {
+    font-family: var(--serif);
+    font-size: calc(var(--fs-xxl) * 1.15);
+    line-height: 1.15;
+    font-weight: 400;
+    text-align: center;
+    color: var(--primary-dark);
+    letter-spacing: -2px;
+    margin-bottom: 0.75em;
+}
+
+h2 {
+    font-family: var(--serif);
+    font-size: var(--fs-xl);
+    line-height: 1.2;
+    margin: 48px 0 18px;
+    color: var(--primary-dark);
+    letter-spacing: -0.5px;
+}
+
+h3 {
+    font-family: var(--sans);
+    font-size: var(--fs-lg);
+    margin: 42px 0 8px;
+    color: var(--primary-mid);
+    line-height: 1.25;
+}
+
+p {
+    font-family: var(--sans);
+    font-size: var(--fs-base);
+    margin-bottom: 14px;
+    line-height: 1.75;
+    color: var(--text-muted);
+}
+
+a {
+    color: var(--primary-mid);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #004999;
+}
+
+a:focus {
+    outline: 3px solid #FFBF47;
+    outline-offset: 2px;
+}
